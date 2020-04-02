@@ -1,15 +1,12 @@
-snippet if "If statement" b
-if (${1:condition}) begin
-	${2:${VISUAL}}
+snippet alw@* "always @*" b
+always @* begin
+	${1:${VISUAL}}
 end
 endsnippet
 
-snippet ife "If-else statement" b
-if (${1:condition}) begin
+snippet alw@( "always @()" b
+always @(${1:sensitivity list}) begin
 	${2:${VISUAL}}
-end
-else begin
-	${3:${VISUAL}}
 end
 endsnippet
 
@@ -22,6 +19,21 @@ endsnippet
 snippet el "Else statement" b
 else begin
 	${1:${VISUAL}}
+end
+endsnippet
+
+snippet if "If statement" b
+if (${1:condition}) begin
+	${2:${VISUAL}}
+end
+endsnippet
+
+snippet ife "If-else statement" b
+if (${1:condition}) begin
+	${2:${VISUAL}}
+end
+else begin
+	${3:${VISUAL}}
 end
 endsnippet
 
