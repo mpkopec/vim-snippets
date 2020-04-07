@@ -49,13 +49,17 @@ else begin
 end
 endsnippet
 
-snippet function "Function statement" b
-if (${1:condition}) begin
-	${2:${VISUAL}}
-end
+snippet func "Function definition" b
+function (
+	${1:${VISUAL:inputs definitions}}
+); 
+	begin
+		${2:${VISUAL}}
+	end
+endfunction
 endsnippet
 
-snippet mod "Module statement" b
+snippet mod "Module definition" b
 module (
 	${1:${VISUAL:ports definitions}}
 );
@@ -63,7 +67,7 @@ module (
 endmodule
 endsnippet
 
-snippet modp "Module with parameters statement" b
+snippet modp "Module with parameters definition" b
 module #(
 	${1:${VISUAL:parameters definitions}}
 )(
@@ -71,4 +75,14 @@ module #(
 );
 	${3:${VISUAL}}
 endmodule
+endsnippet
+
+snippet task "Task definition" b
+task (
+	${1:${VISUAL:ports definitions}}
+); 
+	begin
+		${2:${VISUAL}}
+	end
+endtask
 endsnippet
