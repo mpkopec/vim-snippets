@@ -83,20 +83,28 @@ endsnippet
 
 snippet modpio "Module definition with parameters and IO" b
 module ${1:module_name} #(
-	${1:${VISUAL:parameters definitions}}
+	${2:${VISUAL:parameters definitions}}
 )(
-	${2:${VISUAL:ports definitions}}
+	${3:${VISUAL:ports definitions}}
 );
-	${3:${VISUAL}}
+	${4:${VISUAL}}
 endmodule
 endsnippet
 
 snippet task "Task definition" b
-task (
-	${1:${VISUAL:ports definitions}}
-); 
+task ${1:task_name}(); 
 	begin
 		${2:${VISUAL}}
+	end
+endtask
+endsnippet
+
+snippet taskp "Task definition with ports" b
+task ${1:task_name}(
+	${2:${VISUAL:ports definitions}}
+); 
+	begin
+		${3:${VISUAL}}
 	end
 endtask
 endsnippet
