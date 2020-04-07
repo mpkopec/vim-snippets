@@ -53,8 +53,12 @@ snippet in "Input" b
 input ${1:input_name},
 endsnippet
 
-snippet inv "Input" b
+snippet inv "Input vector" b
 input [${1:n}:${2:m}] ${3:input_name},
+endsnippet
+
+snippet inrv "Input register vector" b
+input reg [${1:n}:${2:m}] ${3:input_name},
 endsnippet
 
 snippet func "Function definition" b
@@ -107,4 +111,20 @@ task ${1:task_name}(
 		${3:${VISUAL}}
 	end
 endtask
+endsnippet
+
+snippet out "output" b
+output ${1:output_name},
+endsnippet
+
+snippet outv "output vector" b
+output [${1:n}:${2:m}] ${3:output_name},
+endsnippet
+
+snippet outrv "output register vector" b
+output reg [${1:n}:${2:m}] ${3:output_name},
+endsnippet
+
+snippet v "vector/array range" b
+[${1:n}:${2:m}]
 endsnippet
