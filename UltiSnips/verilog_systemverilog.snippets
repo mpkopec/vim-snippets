@@ -50,15 +50,15 @@ end
 endsnippet
 
 snippet in "Input" b
-input ${1:input_name},
+input ${1:input_name}
 endsnippet
 
 snippet inv "Input vector" b
-input [${1:n}:${2:m}] ${3:input_name},
+input [${1:n}:${2:m}] ${3:input_name}
 endsnippet
 
 snippet inrv "Input register vector" b
-input reg [${1:n}:${2:m}] ${3:input_name},
+input reg [${1:n}:${2:m}] ${3:input_name}
 endsnippet
 
 snippet func "Function definition" b
@@ -95,6 +95,10 @@ module ${1:module_name} #(
 endmodule
 endsnippet
 
+snippet par "Paramter" b
+parameter ${1:parameter_name}
+endsnippet
+
 snippet task "Task definition" b
 task ${1:task_name}(); 
 	begin
@@ -113,18 +117,18 @@ task ${1:task_name}(
 endtask
 endsnippet
 
-snippet out "output" b
-output ${1:output_name},
+snippet out "Output" b
+output ${1:output_name}
 endsnippet
 
-snippet outv "output vector" b
-output [${1:n}:${2:m}] ${3:output_name},
+snippet outv "Output vector" b
+output [${1:n}:${2:m}] ${3:output_name}
 endsnippet
 
-snippet outrv "output register vector" b
-output reg [${1:n}:${2:m}] ${3:output_name},
+snippet outrv "Output register vector" b
+output reg [${1:n}:${2:m}] ${3:output_name}
 endsnippet
 
-snippet v "vector/array range" b
+snippet v "Vector/array range" b
 [${1:n}:${2:m}]
 endsnippet
