@@ -49,26 +49,40 @@ else begin
 end
 endsnippet
 
+snippet in "Input" b
+input ${1:input_name},
+endsnippet
+
+snippet inv "Input" b
+input [${1:n}:${2:m}] ${3:input_name},
+endsnippet
+
 snippet func "Function definition" b
-function (
-	${1:${VISUAL:inputs definitions}}
+function ${1:func_name}(
+	${2:${VISUAL:inputs definitions}}
 ); 
 	begin
-		${2:${VISUAL}}
+		${3:${VISUAL}}
 	end
 endfunction
 endsnippet
 
 snippet mod "Module definition" b
-module (
-	${1:${VISUAL:ports definitions}}
-);
+module ${1:module_name}();
 	${2:${VISUAL}}
 endmodule
 endsnippet
 
-snippet modp "Module with parameters definition" b
-module #(
+snippet modio "Module definition with IO" b
+module ${1:module_name}(
+	${2:${VISUAL:ports definitions}}
+);
+	${3:${VISUAL}}
+endmodule
+endsnippet
+
+snippet modpio "Module definition with parameters and IO" b
+module ${1:module_name} #(
 	${1:${VISUAL:parameters definitions}}
 )(
 	${2:${VISUAL:ports definitions}}
