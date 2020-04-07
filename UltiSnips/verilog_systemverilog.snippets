@@ -48,3 +48,27 @@ else begin
 	${5:${VISUAL}}
 end
 endsnippet
+
+snippet function "Function statement" b
+if (${1:condition}) begin
+	${2:${VISUAL}}
+end
+endsnippet
+
+snippet mod "Module statement" b
+module (
+	${1:${VISUAL:ports definitions}}
+);
+	${2:${VISUAL}}
+endmodule
+endsnippet
+
+snippet modp "Module with parameters statement" b
+module #(
+	${1:${VISUAL:parameters definitions}}
+)(
+	${2:${VISUAL:ports definitions}}
+);
+	${3:${VISUAL}}
+endmodule
+endsnippet
