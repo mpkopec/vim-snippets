@@ -66,15 +66,15 @@ end
 endsnippet
 
 snippet inv "Input vector" b
-input [${1:n}:${2:m}] ${3:input_name}
+input [${1:n}:${2:0}] ${3:input_name}
 endsnippet
 
 snippet inrv "Input register vector" b
-input reg [${1:n}:${2:m}] ${3:input_name}
+input reg [${1:n}:${2:0}] ${3:input_name}
 endsnippet
 
 snippet func "Function definition" b
-function ${1:func_name}(); 
+function ${1:func_name}();
 	begin
 		${2:${VISUAL}}
 	end
@@ -84,7 +84,7 @@ endsnippet
 snippet funcio "Function definition with IO" b
 function ${1:func_name}(
 	${2:${VISUAL:inputs definitions}}
-); 
+);
 	begin
 		${3:${VISUAL}}
 	end
@@ -124,11 +124,11 @@ reg ${1:reg_name}
 endsnippet
 
 snippet regv "Register vector" b
-reg [${1:n}:${2:m}] ${3:reg_name}
+reg [${1:n}:${2:0}] ${3:reg_name}
 endsnippet
 
 snippet task "Task definition" b
-task ${1:task_name}(); 
+task ${1:task_name}();
 	begin
 		${2:${VISUAL}}
 	end
@@ -138,7 +138,7 @@ endsnippet
 snippet taskp "Task definition with ports" b
 task ${1:task_name}(
 	${2:${VISUAL:ports definitions}}
-); 
+);
 	begin
 		${3:${VISUAL}}
 	end
@@ -150,13 +150,21 @@ output ${1:output_name}
 endsnippet
 
 snippet outv "Output vector" b
-output [${1:n}:${2:m}] ${3:output_name}
+output [${1:n}:${2:0}] ${3:output_name}
 endsnippet
 
 snippet outrv "Output register vector" b
-output reg [${1:n}:${2:m}] ${3:output_name}
+output reg [${1:n}:${2:0}] ${3:output_name}
 endsnippet
 
-snippet v "Vector/array range" 
-[${1:n}:${2:m}]
+snippet v "Vector/array range"
+[${1:n}:${2:0}]
+endsnippet
+
+snippet wire "Simple wire" b
+wire ${1:signal_name};
+endsnippet
+
+snippet wirev "Wire vector" b
+wire [${1:n}:${2:0}] ${3:signal_name};
 endsnippet
