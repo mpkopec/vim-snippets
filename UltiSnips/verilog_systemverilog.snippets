@@ -91,6 +91,10 @@ function ${1:func_name}(
 endfunction
 endsnippet
 
+snippet locp "Local parameter" b
+localparam ${1:parameter_name} = ${2:parameter_value};
+endsnippet
+
 snippet mod "Module definition" b
 module ${1:module_name}();
 	${2:${VISUAL}}
@@ -115,7 +119,7 @@ module ${1:module_name} #(
 endmodule
 endsnippet
 
-snippet par "Paramter" b
+snippet par "Parameter" b
 parameter ${1:parameter_name} = ${2:parameter_value}
 endsnippet
 
