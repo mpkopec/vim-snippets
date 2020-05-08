@@ -16,6 +16,12 @@ always @(${1:sensitivity list}) begin
 end
 endsnippet
 
+snippet beg "Begin-end" w
+begin
+	${1:${VISUAL}}
+end
+endsnippet
+
 snippet ei "Else-if statement" b
 else if (${1:condition}) begin
 	${2:${VISUAL}}
@@ -26,6 +32,12 @@ snippet el "Else statement" b
 else begin
 	${1:${VISUAL}}
 end
+endsnippet
+
+snippet gen "Generate block" b
+generate
+	${1:${VISUAL}}
+endgenerate
 endsnippet
 
 snippet if "If statement" b
@@ -43,7 +55,7 @@ else begin
 end
 endsnippet
 
-snippet ifee "If-else if-else statement" b
+snippet ifee "If-elseif-else statement" b
 if (${1:condition}) begin
 	${2:${VISUAL}}
 end
@@ -119,8 +131,16 @@ module ${1:module_name} #(
 endmodule
 endsnippet
 
+snippet neg "Negedge signal_name" i
+negedge ${1:signal_name}
+endsnippet
+
 snippet par "Parameter" b
 parameter ${1:parameter_name} = ${2:parameter_value}
+endsnippet
+
+snippet pos "Posedge signal_name" i
+posedge ${1:signal_name}
 endsnippet
 
 snippet reg "Register variable" b
