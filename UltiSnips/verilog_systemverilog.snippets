@@ -67,6 +67,15 @@ else begin
 end
 endsnippet
 
+snippet ifn "Header guard" b
+`ifndef ${1:guard_text}
+`define ${1}
+
+${VISUAL}
+
+`endif
+endsnippet
+
 snippet in "Input" b
 input ${1:input_name}
 endsnippet
