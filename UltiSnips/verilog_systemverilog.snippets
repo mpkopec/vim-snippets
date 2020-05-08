@@ -69,7 +69,7 @@ endsnippet
 
 snippet ifn "Header guard" b
 \`ifndef ${1:guard_text}
-\`define ${1}
+\`define $1
 
 ${VISUAL}
 
@@ -92,6 +92,10 @@ endsnippet
 
 snippet inrv "Input register vector" b
 input reg [${1:n}:${2:0}] ${3:input_name}
+endsnippet
+
+snippet io "Instantiation IO" w
+.${1:io_name}(${2:$1})
 endsnippet
 
 snippet func "Function definition" b
