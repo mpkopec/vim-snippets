@@ -16,6 +16,17 @@ always @(${1:sensitivity list}) begin
 end
 endsnippet
 
+snippet seq "sequential block" b
+always @(${1:posedge} ${2:clk}, ${3:posedge} ${4:rst}) begin
+	if ($4) begin
+		$5
+	end
+	else begin
+		$6
+	end
+end
+endsnippet
+
 snippet beg "Begin-end" w
 begin
 	${1:${VISUAL}}
@@ -86,12 +97,16 @@ initial begin
 end
 endsnippet
 
-snippet inv "Input vector" b
-input [${1:n}:${2:0}] ${3:input_name}
+snippet inr "Input register" b
+input reg ${1:input_name}
 endsnippet
 
 snippet inrv "Input register vector" b
 input reg [${1:n}:${2:0}] ${3:input_name}
+endsnippet
+
+snippet inv "Input vector" b
+input [${1:n}:${2:0}] ${3:input_name}
 endsnippet
 
 snippet io "Instantiation IO" w
@@ -188,6 +203,10 @@ endsnippet
 
 snippet out "Output" b
 output ${1:output_name}
+endsnippet
+
+snippet outr "Output register" b
+output reg ${1:output_name}
 endsnippet
 
 snippet outv "Output vector" b
