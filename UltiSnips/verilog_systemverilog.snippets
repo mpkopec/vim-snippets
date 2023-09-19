@@ -1,0 +1,230 @@
+snippet @ "@()" b
+@(${1:sensitivity_list}) begin
+	${2:${VISUAL}}
+end
+endsnippet
+
+snippet alwata "always @*" b
+always @* begin
+	${1:${VISUAL}}
+end
+endsnippet
+
+snippet alwats "always @()" b
+always @(${1:sensitivity list}) begin
+	${2:${VISUAL}}
+end
+endsnippet
+
+snippet seq "sequential block" b
+always @(${1:posedge} ${2:clk}, ${3:posedge} ${4:rst}) begin
+	if ($4) begin
+		$5
+	end
+	else begin
+		$6
+	end
+end
+endsnippet
+
+snippet beg "Begin-end" w
+begin
+	${1:${VISUAL}}
+end
+endsnippet
+
+snippet ei "Else-if statement" b
+else if (${1:condition}) begin
+	${2:${VISUAL}}
+end
+endsnippet
+
+snippet el "Else statement" b
+else begin
+	${1:${VISUAL}}
+end
+endsnippet
+
+snippet gen "Generate block" b
+generate
+	${1:${VISUAL}}
+endgenerate
+endsnippet
+
+snippet if "If statement" b
+if (${1:condition}) begin
+	${2:${VISUAL}}
+end
+endsnippet
+
+snippet ife "If-else statement" b
+if (${1:condition}) begin
+	${2:${VISUAL}}
+end
+else begin
+	${3:${VISUAL}}
+end
+endsnippet
+
+snippet ifee "If-elseif-else statement" b
+if (${1:condition}) begin
+	${2:${VISUAL}}
+end
+else if (${3:condition}) begin
+	${4:${VISUAL}}
+end
+else begin
+	${5:${VISUAL}}
+end
+endsnippet
+
+snippet ifn "Header guard" b
+\`ifndef ${1:guard_text}
+\`define $1
+
+${VISUAL}
+
+\`endif
+endsnippet
+
+snippet in "Input" b
+input ${1:input_name}
+endsnippet
+
+snippet init "Initial block" b
+initial begin
+	${1:${VISUAL}}
+end
+endsnippet
+
+snippet inr "Input register" b
+input reg ${1:input_name}
+endsnippet
+
+snippet inrv "Input register vector" b
+input reg [${1:n}:${2:0}] ${3:input_name}
+endsnippet
+
+snippet inv "Input vector" b
+input [${1:n}:${2:0}] ${3:input_name}
+endsnippet
+
+snippet io "Instantiation IO" w
+.${1:io_name}(${2:$1})
+endsnippet
+
+snippet func "Function definition" b
+function ${1:func_name}();
+	begin
+		${2:${VISUAL}}
+	end
+endfunction
+endsnippet
+
+snippet funcio "Function definition with IO" b
+function ${1:func_name}(
+	${2:${VISUAL:inputs definitions}}
+);
+	begin
+		${3:${VISUAL}}
+	end
+endfunction
+endsnippet
+
+snippet locp "Local parameter" b
+localparam ${1:parameter_name} = ${2:parameter_value};
+endsnippet
+
+snippet mod "Module definition" b
+module ${1:module_name}();
+	${2:${VISUAL}}
+endmodule
+endsnippet
+
+snippet modio "Module definition with IO" b
+module ${1:module_name}(
+	${2:${VISUAL:ports definitions}}
+);
+	${3:${VISUAL}}
+endmodule
+endsnippet
+
+snippet modpio "Module definition with parameters and IO" b
+module ${1:module_name} #(
+	${2:${VISUAL:parameters definitions}}
+)(
+	${3:${VISUAL:ports definitions}}
+);
+	${4:${VISUAL}}
+endmodule
+endsnippet
+
+snippet neg "Negedge signal_name" i
+negedge ${1:signal_name}
+endsnippet
+
+snippet par "Parameter" b
+parameter ${1:parameter_name} = ${2:parameter_value}
+endsnippet
+
+snippet pos "Posedge signal_name" i
+posedge ${1:signal_name}
+endsnippet
+
+snippet reg "Register variable" b
+reg ${1:reg_name}
+endsnippet
+
+snippet regv "Register vector" b
+reg [${1:n}:${2:0}] ${3:reg_name}
+endsnippet
+
+snippet regva "Register vector array" b
+reg [${1:n}:${2:0}] ${3:reg_name} [${4:m}:${5:0}]
+endsnippet
+
+snippet task "Task definition" b
+task ${1:task_name}();
+	begin
+		${2:${VISUAL}}
+	end
+endtask
+endsnippet
+
+snippet taskp "Task definition with ports" b
+task ${1:task_name}(
+	${2:${VISUAL:ports definitions}}
+);
+	begin
+		${3:${VISUAL}}
+	end
+endtask
+endsnippet
+
+snippet out "Output" b
+output ${1:output_name}
+endsnippet
+
+snippet outr "Output register" b
+output reg ${1:output_name}
+endsnippet
+
+snippet outv "Output vector" b
+output [${1:n}:${2:0}] ${3:output_name}
+endsnippet
+
+snippet outrv "Output register vector" b
+output reg [${1:n}:${2:0}] ${3:output_name}
+endsnippet
+
+snippet v "Vector/array range"
+[${1:n}:${2:0}]
+endsnippet
+
+snippet wire "Simple wire" b
+wire ${1:signal_name};
+endsnippet
+
+snippet wirev "Wire vector" b
+wire [${1:n}:${2:0}] ${3:signal_name};
+endsnippet
