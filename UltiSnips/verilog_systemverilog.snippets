@@ -17,6 +17,23 @@ end
 endsnippet
 
 snippet seq "sequential block" b
+always @(${1:posedge} ${2:clk}) begin
+	$3
+end
+endsnippet
+
+snippet seqs "sequential sync rst block" b
+always @(${1:posedge} ${2:clk}) begin
+	if (${3:rst}) begin
+		$4
+	end
+	else begin
+		$5
+	end
+end
+endsnippet
+
+snippet seqa "sequential async rst block" b
 always @(${1:posedge} ${2:clk}, ${3:posedge} ${4:rst}) begin
 	if ($4) begin
 		$5
