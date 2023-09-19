@@ -20,6 +20,10 @@ always @(${1:sensitivity list}) begin
 end
 endsnippet
 
+snippet cond "conditional operator" b
+(${1:if}) ? ${2:then} : ${3:else};
+endsnippet
+
 snippet seq "sequential block" b
 always @(${1:posedge} ${2:clk}) begin
 	$3
