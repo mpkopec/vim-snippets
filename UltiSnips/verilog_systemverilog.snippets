@@ -189,15 +189,15 @@ posedge ${1:signal_name}
 endsnippet
 
 snippet reg "Register variable" b
-reg ${1:reg_name}
+reg ${1:reg_name};
 endsnippet
 
 snippet regv "Register vector" b
-reg [${1:n}:${2:0}] ${3:reg_name}
+reg [${1:n}:${2:0}] ${3:reg_name};
 endsnippet
 
 snippet regva "Register vector array" b
-reg [${1:n}:${2:0}] ${3:reg_name} [${4:m}:${5:0}]
+reg [${1:n}:${2:0}] ${3:reg_name} [${4:m}:${5:0}];
 endsnippet
 
 snippet task "Task definition" b
