@@ -226,6 +226,12 @@ task ${1:task_name}(
 endtask
 endsnippet
 
+snippet fork "Fork block" b
+fork
+	${2:${VISUAL}}
+join
+endsnippet
+
 snippet out "Output" b
 output ${1:output_name}
 endsnippet
