@@ -467,6 +467,14 @@ snippet ac "Acroynm normal" bi
 \ac{${1:acronym}}
 endsnippet
 
+snippet mc "generic macro - no options" bi
+\\${1:macro}{${2:content}}
+endsnippet
+
+snippet mco "generic macro - with options" bi
+\\${1:macro}[${2:options}]{${3:content}}$0
+endsnippet
+
 snippet ni "Non-indented paragraph" bi
 \noindent
 endsnippet
