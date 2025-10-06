@@ -266,6 +266,10 @@ snippet mc mathcal
 snippet ms mathscr
 	\\mathscr{${1:${VISUAL:text}}}${0}
 #misc
+snippet mr "generic macro - no options"
+	\\${1:macro}{${2:${VISUAL:content}}}
+snippet mo "generic macro - with options"
+	\\${1:macro}[${2:options}]{${3:${VISUAL:content}}}
 snippet ft \footnote
 	\\footnote{${1:${VISUAL:text}}}${0}
 snippet fig figure environment (includegraphics)
