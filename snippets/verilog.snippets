@@ -1,73 +1,73 @@
 snippet if "if statement"
 	if (${1}) begin
-		${0}
+		${0:${VISUAL}}
 	end
 snippet ife "If/else statements"
 	if (${1}) begin
-		${2}
+		${2:${VISUAL}}
 	end
 	else begin
-		${3}
+		${3:${VISUAL}}
 	end
 snippet eif "Else if statement"
 	else if (${1}) begin
-		${0}
+		${0:${VISUAL}}
 	end
-snippet el "statement"
+snippet el "Else statement"
 	else begin
-		${0}
+		${0:${VISUAL}}
 	end
 snippet wh "While statement"
 	while (${1}) begin
-		${0}
+		${0:${VISUAL}}
 	end
 snippet rep "Repeat Loop"
 	repeat (${1}) begin
-		${0}
+		${0:${VISUAL}}
 	end
 snippet case "Case statement"
 	case (${1:/* variable */})
 		${2:/* value */}: begin
-			${3}
+			${3:${VISUAL}}
 		end
 		default: begin
-			${4}
+			${4:${VISUAL}}
 		end
 	endcase
 snippet casez "CaseZ statement"
 	casez (${1:/* variable */})
 		${2:/* value */}: begin
-			${3}
+			${3:${VISUAL}}
 		end
 		default: begin
-			${4}
+			${4:${VISUAL}}
 		end
 	endcase
 snippet al "Always block"
 	always @(${1:/* sensitive list */}) begin
-		${0}
+		${2:${VISUAL}}
 	end
 snippet mod "Module block"
 	module ${1:`vim_snippets#Filename('$1', 'name')`} (${2});
-		${0}
+		${0:${VISUAL}}
 	endmodule
 snippet for "For"
 	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) begin
-		${4}
+		${4:${VISUAL}}
 	end
 snippet forev "Forever"
 	forever begin
-		${0}
+		${0:${VISUAL}}
 	end
 snippet fun "Function"
 	function ${1:void} ${2:name}(${3});
-		${0}
+		${0:${VISUAL}}
 	endfunction: $2
 snippet task "Task"
 	task ${1:name}(${2});
-		${0}
+		${0:${VISUAL}}
 	endtask: $1
 snippet ini "Initial "
 	initial begin
-		${0}
+		${0:${VISUAL}}
 	end
