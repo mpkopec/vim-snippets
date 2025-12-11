@@ -113,7 +113,7 @@ ${VISUAL}
 endsnippet
 
 snippet in "Input" b
-input ${1:input_name}
+input ${1:input_name}_i
 endsnippet
 
 snippet init "Initial block" b
@@ -123,15 +123,15 @@ end
 endsnippet
 
 snippet inr "Input register" b
-input reg ${1:input_name}
+input reg ${1:input_name}_i
 endsnippet
 
 snippet inrv "Input register vector" b
-input reg [${1:n}:${2:0}] ${3:input_name}
+input reg [${1:n}:${2:0}] ${3:input_name}_i
 endsnippet
 
 snippet inv "Input vector" b
-input [${1:n}:${2:0}] ${3:input_name}
+input [${1:n}:${2:0}] ${3:input_name}_i
 endsnippet
 
 snippet io "Instantiation IO" w
@@ -227,19 +227,19 @@ endtask
 endsnippet
 
 snippet out "Output" b
-output ${1:output_name}
+output ${1:output_name}_o
 endsnippet
 
 snippet outr "Output register" b
-output reg ${1:output_name}
+output reg ${1:output_name}_o
 endsnippet
 
 snippet outv "Output vector" b
-output [${1:n}:${2:0}] ${3:output_name}
+output [${1:n}:${2:0}] ${3:output_name}_o
 endsnippet
 
 snippet outrv "Output register vector" b
-output reg [${1:n}:${2:0}] ${3:output_name}
+output reg [${1:n}:${2:0}] ${3:output_name}_o
 endsnippet
 
 snippet v "Vector/array range"
