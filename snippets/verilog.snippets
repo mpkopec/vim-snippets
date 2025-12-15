@@ -8,6 +8,32 @@ snippet be "Begin-end"
 	end
 snippet cond "Conditional operator"
 	(${1:if}) ? ${2:then} : ${3:else};
+snippet fsm "Finite state machine"
+	localparam ${1:IDLE} = 0;
+	${2:/*other states*/}
+
+	reg [${3:n}:${4:0}] ${5:state}_reg, $5_next;
+	always @(posedge clk) begin
+		if (rst) begin
+			$5_reg <= $1;
+		end
+		else begin
+			$5_reg <= $5_next;
+		end
+	end
+
+	always @* begin
+		// default values, regardless of state
+
+		case ($5_reg)
+			$1: begin
+				${6:/* $1 behavior */}
+			end
+			default: begin
+				$5_next = $1;
+			end
+		encase
+	end
 snippet gen "Generate block"
 	generate
 		${0:${VISUAL}}
@@ -128,8 +154,8 @@ snippet modp "Module with parameters"
 		${0:${VISUAL}}
 	endmodule
 snippet for "For"
-	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) begin
-		${4:${VISUAL}}
+	for (${1:i} = ${2:0}; ${3:i < count}; ${4:i = i + 1}) begin
+		${5:${VISUAL}}
 	end
 snippet forev "Forever"
 	forever begin
