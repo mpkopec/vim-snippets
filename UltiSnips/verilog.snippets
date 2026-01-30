@@ -10,15 +10,20 @@ def verilog_fsm(snip):
 
 		lines = []
 		max_state_len = max(states_lens)
-		for i, s in enumerate(states):
-				s = " "*abs(len(s) - max_state_len) + s
-				i = " "*abs(len(str(len(states))) - len(str(i))) + str(i)
-				lines.append(f"\tlocalparam {s} = {i};")
-		lines.append(f"")
 
 		if bit_width == 1:
+				for i, s in enumerate(states):
+						s = " "*abs(len(s) - max_state_len) + s
+						i = " "*abs(len(str(len(states))) - len(str(i))) + str(i)
+						lines.append(f"\tlocalparam {s} = {i};")
+				lines.append(f"")
 				lines.append(f"\treg ${{1:state}}_reg, $1_next;")
 		else:
+				for i, s in enumerate(states):
+						s = " "*abs(len(s) - max_state_len) + s
+						i = " "*abs(len(str(len(states))) - len(str(i))) + str(i)
+						lines.append(f"\tlocalparam [{bit_width - 1}:0] {s} = {i};")
+				lines.append(f"")
 				lines.append(f"\treg [{bit_width - 1}:0] ${{1:state}}_reg, $1_next;")
 		lines.append(f"")
 		lines.append(f"\talways @(${{2:posedge clk}}) begin")
