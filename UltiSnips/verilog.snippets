@@ -1,3 +1,5 @@
+extends verilog
+
 global !p
 def verilog_fsm(snip):
 		import math
@@ -58,6 +60,6 @@ def verilog_fsm(snip):
 endglobal
 
 post_jump "verilog_fsm(snip)"
-snippet "fsm:(((\w+),)*\w+)" "Finite state machine" br
+snippet "fsm\s+(((\w+),)*\w+)" "Finite state machine" br
 `!p snip.rv = match.group(1) `$0
 endsnippet
