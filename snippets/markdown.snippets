@@ -132,6 +132,17 @@ snippet fig "Figure, i.e. img with caption"
 			</div>
 	</div>
 
+snippet glfig "Figure, i.e. img with caption"
+	<div align="center">
+			<img src="${1:image path}"
+					 width="${2:width}"
+					 alt="${3:alt text}"
+					 title="${4:$3}" />
+			<div>
+					<em>${5:caption}</em>
+			</div>
+	</div>
+
 snippet gist-full
 	{% gist ${1:gist_id} ${0:filename} %}
 
