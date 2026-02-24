@@ -121,6 +121,17 @@ snippet codeblock-full
 	${0:code_snippet}
 	{% endcodeblock %}
 
+snippet fig "Figure, i.e. img with caption"
+	<div style="text-align: center;">
+			<img src="${1:image path}"
+					 style="width:${2:width};"
+					 alt="${3:alt text}"
+					 title="${4:$3}" />
+			<div style="width: 90%">
+					<em>${5:caption}</em>
+			</div>
+	</div>
+
 snippet gist-full
 	{% gist ${1:gist_id} ${0:filename} %}
 
