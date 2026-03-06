@@ -1,23 +1,17 @@
-#
-## Libraries
-
-snippet lib
+snippet lib "Use a user-defined library"
 	library ${1}
 	use $1.${2}
 
-# Standard Libraries
-snippet libs
+snippet libs "Use standard IEEE libraries"
 	library IEEE;
-	use IEEE.std_logic_1164.ALL;
-	use IEEE.numeric_std.ALL;
+	use IEEE.std_logic_1164.all;
+	use IEEE.numeric_std.all;
 
-# Xilinx Library
-snippet libx
+snippet libx "Use Xilinx libraries"
 	library UNISIM;
-	use UNISIM.VCOMPONENTS.ALL;
+	use UNISIM.vcomponents.all;
 
-## Entity Declaration
-snippet ent
+snippet ent "Entity"
 	entity ${1:`vim_snippets#Filename()`} is
 		generic (
 			${2}
@@ -27,8 +21,16 @@ snippet ent
 		);
 	end entity $1;
 
-## Architecture
-snippet arc
+snippet pac "Package declaration"
+	 package ${1:`vim_snippets#Filename()`} is
+		generic (
+			${2}
+		);
+
+		${3}
+	end package $1;
+
+snippet arc "Architecture"
 	architecture ${1:behav} of ${2:`vim_snippets#Filename()`} is
 
 		${3}
@@ -39,44 +41,33 @@ snippet arc
 	end $1;
 
 ## Declarations
-# std_logic
-snippet st
-	signal ${1} : std_logic;
-# std_logic_vector
-snippet sv
-	signal ${1} : std_logic_vector (${2} downto 0);
-# std_logic in
-snippet ist
-	${1} : in std_logic;
-# std_logic_vector in
-snippet isv
-	${1} : in std_logic_vector (${2} downto 0);
-# std_logic out
-snippet ost
-	${1} : out std_logic;
-# std_logic_vector out
-snippet osv
-	${1} : out std_logic_vector (${2} downto 0);
-# unsigned
-snippet un
-	signal ${1} : unsigned (${2} downto 0);
+snippet sl "std_logic"
+	std_logic
+snippet slv "std_logic_vector"
+	std_logic_vector(${1:n} downto ${2:0})
+snippet ge "Generic-like format, name : type"
+	${1:NAME} : ${2:std_logic};
+snippet si "signal"
+	signal ${1:signal_name} : ${2:std_logic};
+snippet io "input/output"
+	${1:name} : ${2: in} ${3:std_logic};
+
 ## Process Statements
-# process
-snippet pr
-	process (${1})
+snippet pr "Bare process"
+	process (${1:sensitivity list})
 	begin
 		${2}
 	end process;
-# process with clock
-snippet prc
+
+snippet prc "Process with clock"
 	process (${1:clk})
 	begin
 		if rising_edge ($1) then
 			${2}
 		end if;
 	end process;
-# process with clock and reset
-snippet prcr
+
+snippet prcr "Process with clock and reset"
 	process (${1:clk}, ${2:nrst})
 	begin
 		if ($2 = '${3:0}') then
@@ -85,53 +76,53 @@ snippet prcr
 			${5}
 		end if;
 	end process;
-# process all
-snippet pra
+
+snippet pra "Process all"
 	process (${1:all})
 	begin
 		${2}
 	end process;
+
 ## Control Statements
-# if
-snippet if
+snippet if "If statement"
 	if ${1} then
 		${2}
 	end if;
-# if
-snippet ife
+
+snippet ife "If-else statement"
 	if ${1} then
 		${2}
 	else
 		${3}
 	end if;
-# else
-snippet el
+
+snippet el "Else statement"
 	else
 		${1}
-# if
-snippet eif
+
+snippet eif "Elsif statement"
 	elsif ${1} then
 		${2}
-# case
-snippet ca
+
+snippet ca "Case statement"
 	case ${1} is
 		${2}
 	end case;
-# when
-snippet wh
+
+snippet wh "When statement"
 	when ${1} =>
 		${2}
-# for
-snippet for
+
+snippet for "For loop"
 	for ${1:i} in ${2} ${3:to} ${4} loop
 		${5}
 	end loop;
-# while
-snippet wh
+
+snippet wh "While loop"
 	while ${1} loop
 		${2}
 	end loop;
+
 ## Misc
-# others
-snippet oth
+snippet oth "Others"
 	(others => '${1:0}');
