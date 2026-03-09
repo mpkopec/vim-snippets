@@ -32,13 +32,39 @@ snippet pac "Package declaration"
 
 snippet arc "Architecture"
 	architecture ${1:behav} of ${2:`vim_snippets#Filename()`} is
-
-		${3}
+		${3:-- architecture declarationd}
 
 	begin
+		${4:-- architecture logic}
+	end;
 
+snippet comp "Component declaration"
+	component ${1:name} is
+		generic (
+			${2:generics}
+		);
+		port (
+			${3:ports}
+		);
+	end component;
 
-	end $1;
+snippet inst "Component instantiation"
+	${1:inst_name} : ${2:component_name}
+		generic map (
+			${3:generics}
+		)
+		port map (
+			${4:ports}
+		);
+
+snippet inste "Direct entity instantiation"
+	${1:inst_name} : entity ${2:work}.${3:entity_name}
+		generic map (
+			${4:generics}
+		)
+		port map (
+			${5:ports}
+		);
 
 ## Declarations
 snippet sl "std_logic"
